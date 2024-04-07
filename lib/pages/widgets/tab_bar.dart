@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/data/student_data.dart';
-import 'package:hck_app/pages/RoutinePage/routine_card.dart';
-import 'package:hck_app/pages/RoutinePage/tab_item.dart';
+import 'package:hck_app/pages/widgets/routine_card.dart';
+import 'package:hck_app/pages/widgets/tab_item.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class NavTabBar extends StatelessWidget {
@@ -13,7 +12,7 @@ class NavTabBar extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'Routine',
             style: TextStyle(fontSize: 16),
           ),
@@ -49,6 +48,5 @@ class NavTabBar extends StatelessWidget {
         ),
       ),
     );
-    // );
   }
 }

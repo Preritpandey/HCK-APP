@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hck_app/pages/CoursesPage/courses_page.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
@@ -162,27 +163,36 @@ class ProfilePage extends StatelessWidget {
                       const TextHeading(text: 'Others'),
                       SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02),
-                      const Row(
+                      Row(
                         children: [
-                          CircleAvatar(
+                          const CircleAvatar(
                               backgroundColor: heraldGreen,
                               child: Icon(
                                 Icons.menu_book_outlined,
                                 size: 20,
                                 color: white,
                               )),
-                          SizedBox(width: 10),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              TextSubHeading(
-                                text: 'Courses',
-                                size: 15,
-                              ),
-                              TextSubHeading(
-                                  text:
-                                      'See all the courses at Herald College Kathmandu'),
-                            ],
+                          const SizedBox(width: 10),
+                          GestureDetector(
+                            child: const Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TextSubHeading(
+                                  text: 'Courses',
+                                  size: 15,
+                                ),
+                                TextSubHeading(
+                                    text:
+                                        'See all the courses at Herald College Kathmandu'),
+                              ],
+                            ),
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const CoursesPage()));
+                            },
                           ),
                         ],
                       )

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hck_app/pages/CoursesPage/course_detail.dart';
+import 'package:hck_app/pages/CoursesPage/courses_page.dart';
 import 'package:hck_app/pages/HomePage/home_screen.dart';
 import 'package:hck_app/pages/NotificationPage/notification_page.dart';
 import 'package:hck_app/pages/ProfilePage/profile_page.dart';
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List _pages = [
+    const CourseDetails(),
     const HomeScreen(),
     const NotificationPage(),
     const RoutinePage(),
@@ -36,7 +39,6 @@ class _HomePageState extends State<HomePage> {
           unselectedItemColor: null,
           selectedItemColor: null,
           type: BottomNavigationBarType.fixed,
-          // fixedColor: Colors.transparent,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           currentIndex: selectedTab,

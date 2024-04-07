@@ -166,7 +166,7 @@ class HomeScreen extends StatelessWidget {
           Positioned(
             top: MediaQuery.of(context).size.height / 1.9,
             left: 25,
-            child: UpcomingClasses(),
+            child: const UpcomingClasses(),
           )
         ],
       ),

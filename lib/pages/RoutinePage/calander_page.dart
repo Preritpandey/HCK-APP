@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/RoutinePage/add_event.dart';
+import 'package:hck_app/pages/widgets/add_event.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class CalanderPage extends StatefulWidget {
@@ -20,9 +20,9 @@ class _CalanderPageState extends State<CalanderPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => AddEvent())),
+            .push(MaterialPageRoute(builder: (context) => const AddEvent())),
       ),
     );
   }
