@@ -13,9 +13,9 @@ class TabItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height / 25,
-      width: MediaQuery.of(context).size.width / 5,
+      width: MediaQuery.of(context).size.width / 4,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.circular(5),
           border: Border.all(color: grey)),
       child: Tab(
         child: Text(

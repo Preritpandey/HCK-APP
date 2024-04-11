@@ -23,6 +23,8 @@ const Color redAccent = Colors.redAccent;
 const Color grey = Color(0xFFF0F0F0);
 const Color unselectedLableColor = Color.fromRGBO(47, 72, 83, 0.3);
 const Color backgroundWhite = Color.fromRGBO(231, 246, 244, 0.898);
+const Color cardBackground = Color.fromRGBO(240, 240, 240, 1);
+const Color transparent = Colors.transparent;
 const MaterialColor materialHeraldGreen = MaterialColor(
   _heraldGreenPrimary,
   <int, Color>{

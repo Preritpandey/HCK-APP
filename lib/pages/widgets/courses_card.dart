@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hck_app/pages/CoursesPage/course_detail.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_body.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -47,7 +48,12 @@ class CoursesCard extends StatelessWidget {
                           backgroundColor: white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(3))),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return const CourseDetails();
+                        }));
+                      },
                       child: const Center(
                         child: Text(
                           'View Course',

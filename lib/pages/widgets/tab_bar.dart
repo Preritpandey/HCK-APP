@@ -22,9 +22,11 @@ class NavTabBar extends StatelessWidget {
             isScrollable: true,
             padding: EdgeInsets.only(bottom: 10),
             indicatorSize: TabBarIndicatorSize.label,
+            indicatorWeight: BorderSide.strokeAlignCenter,
+            indicatorPadding: EdgeInsets.zero,
             indicator: BoxDecoration(
               color: heraldGreen,
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+              borderRadius: BorderRadius.all(Radius.circular(5)),
             ),
             labelColor: Colors.white,
             unselectedLabelColor: Colors.black54,

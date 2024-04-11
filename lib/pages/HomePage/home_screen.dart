@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/HomePage/upcomming_classes.dart';
+import 'package:hck_app/pages/NotificationPage/notification_page.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_body.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -13,18 +14,24 @@ class HomeScreen extends StatelessWidget {
     return SafeArea(
       child: Stack(
         children: [
-          const Positioned(
+          Positioned(
             top: 5,
             right: 10,
             child: Row(
               children: [
-                Icon(
-                  Icons.notifications_none_outlined,
-                  size: 33,
+                IconButton(
+                  icon: const Icon(Icons.notifications_none_outlined),
                   color: iconColorBlack,
+                  iconSize: 33,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NotificationPage()));
+                  },
                 ),
-                SizedBox(width: 5),
-                Icon(
+                const SizedBox(width: 5),
+                const Icon(
                   Icons.menu,
                   color: iconColorBlack,
                   size: 33,

@@ -16,7 +16,10 @@ class NotificationPage extends StatelessWidget {
             Row(
               children: [
                 IconButton(
-                    onPressed: () {}, icon: const Icon(Icons.arrow_back_ios)),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.arrow_back_ios)),
                 SizedBox(width: MediaQuery.of(context).size.width / 3.5),
                 const TextHeading(text: "Notifications"),
               ],
