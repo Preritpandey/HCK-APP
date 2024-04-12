@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/HomePage/upcomming_classes.dart';
+import 'package:hck_app/pages/Notice/pages/event_body.dart';
 import 'package:hck_app/pages/NotificationPage/notification_page.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_body.dart';
@@ -31,10 +32,16 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 const SizedBox(width: 5),
-                const Icon(
-                  Icons.menu,
+                IconButton(
+                  icon: Icon(Icons.menu_rounded),
                   color: iconColorBlack,
-                  size: 33,
+                  iconSize: 33,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EventBody()));
+                  },
                 ),
               ],
             ),

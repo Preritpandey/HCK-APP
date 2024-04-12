@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/HomePage/home_screen.dart';
 import 'package:hck_app/pages/LostAndFound/lost_found_page.dart';
+import 'package:hck_app/pages/Notice/pages/notice.dart';
 import 'package:hck_app/pages/ProfilePage/profile_page.dart';
-import 'package:hck_app/pages/RoutinePage/calander_page.dart';
 import 'package:hck_app/pages/RoutinePage/routine_page.dart';
 import 'package:hck_app/resources/constant.dart';
 
@@ -24,8 +24,9 @@ class _HomePageState extends State<HomePage> {
   final List _pages = [
     const HomeScreen(),
     const LostAndFoundPage(),
+    const EventPage(),
     const RoutinePage(),
-    const CalanderPage(),
+    // const CalanderPage(),
     const ProfilePage(),
   ];
   @override
