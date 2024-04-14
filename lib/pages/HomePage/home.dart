@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/HomePage/home_screen.dart';
-import 'package:hck_app/pages/LostAndFound/lost_found_page.dart';
 import 'package:hck_app/pages/Notice/pages/notice.dart';
 import 'package:hck_app/pages/ProfilePage/profile_page.dart';
 import 'package:hck_app/pages/RoutinePage/routine_page.dart';
+import 'package:hck_app/pages/lost_and_found/pages/lost_and_found.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +23,8 @@ class _HomePageState extends State<HomePage> {
 
   final List _pages = [
     const HomeScreen(),
-    const LostAndFoundPage(),
+    LostAndFound(),
+    // const LostAndFoundPage(),
     const EventPage(),
     const RoutinePage(),
     // const CalanderPage(),
