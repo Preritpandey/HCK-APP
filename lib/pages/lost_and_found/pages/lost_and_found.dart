@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/controller/lost_and_found_controller.dart';
 import 'package:hck_app/pages/lost_and_found/pages/lost_and_found_body.dart';
+import 'package:hck_app/pages/lost_and_found/pages/request_lost_item_body.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -17,7 +18,7 @@ class LostAndFound extends StatelessWidget {
       appBar: AppBar(title: Text('Lost and Found'), actions: [
         IconButton(
             icon: Icon(Iconsax.edit4, size: fontSize24),
-            onPressed: () => Get.toNamed('/request_lost_item'))
+            onPressed: () => Get.to(RequestLostItem()))
       ]),
       body: const LostAndFoundBody(),
     );
