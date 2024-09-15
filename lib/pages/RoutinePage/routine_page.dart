@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/tab_bar.dart';
+import 'package:hck_app/widgets/tab_bar.dart';
 
 class RoutinePage extends StatelessWidget {
   const RoutinePage({super.key});

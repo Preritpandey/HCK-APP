@@ -2,10 +2,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/controller/lost_and_found_model.dart';
-import 'package:hck_app/pages/widgets/show_message.dart';
-import 'package:hck_app/pages/widgets/show_snack_bar.dart';
+
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
+import 'package:hck_app/widgets/show_message.dart';
+import 'package:hck_app/widgets/show_snack_bar.dart';
 // import '../services/api_handler.dart';
 
 class LostAndFoundController extends GetxController {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/controller/lost_and_found_model.dart';
-import 'package:hck_app/pages/widgets/footer.dart';
+import 'package:hck_app/widgets/footer.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_normal.dart';

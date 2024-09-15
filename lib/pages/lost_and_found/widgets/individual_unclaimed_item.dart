@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:hck_app/controller/lost_and_found_controller.dart';
 import 'package:hck_app/controller/lost_and_found_model.dart';
-import 'package:hck_app/pages/widgets/no_items_found.dart';
+import 'package:hck_app/widgets/no_items_found.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
 

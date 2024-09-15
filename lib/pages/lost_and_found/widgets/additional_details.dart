@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/input_decoration.dart';
+import 'package:hck_app/widgets/input_decoration.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class AdditionalDetails extends StatelessWidget {

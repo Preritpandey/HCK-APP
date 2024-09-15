@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/Notice/pages/event_body.dart';
 import 'package:hck_app/pages/Notice/pages/internship_body.dart';
-import 'package:hck_app/pages/widgets/custom_tabBar.dart';
+import 'package:hck_app/widgets/custom_tabBar.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
 

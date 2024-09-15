@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/controller/lost_and_found_controller.dart';
-import 'package:hck_app/pages/widgets/button_style.dart';
+import 'package:hck_app/widgets/button_style.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 

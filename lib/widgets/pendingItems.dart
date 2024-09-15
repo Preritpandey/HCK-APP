@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/lostAndFound_button.dart';
+import 'package:hck_app/widgets/lostAndFound_button.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_subheading.dart';
 

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/lost_and_found/widgets/pending_item.dart';
-import 'package:hck_app/pages/widgets/custom_tabBar.dart';
-
+import 'package:hck_app/widgets/custom_tabBar.dart';
 import '../widgets/widgets.dart';
 
 class LostAndFoundBody extends StatelessWidget {

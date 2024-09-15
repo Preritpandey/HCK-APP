@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/add_event.dart';
+import 'package:hck_app/widgets/add_event.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 class CalanderPage extends StatefulWidget {

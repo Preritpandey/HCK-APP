@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/data/course_data.dart';
-import 'package:hck_app/pages/widgets/course_detail.dart';
+import 'package:hck_app/data/course_data.dart'; // Import your course data file
+import 'package:hck_app/widgets/course_detail.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_body.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -22,7 +22,23 @@ class _CourseDetailsState extends State<CourseDetails> {
     'Level 3 / Year 2',
     'Level 2 / Year 3',
   ];
-  late var currentSubTitle;
+
+  // Initial course data to display
+  List<Map<String, String>> currentCourses = bcs.coursesPerYear[0];
+
+  // Method to update courses based on selected year
+  void updateCourses(String year) {
+    setState(() {
+      if (year == items[0]) {
+        currentCourses = bcs.coursesPerYear[0];
+      } else if (year == items[1]) {
+        currentCourses = bcs.coursesPerYear[1];
+      } else if (year == items[2]) {
+        currentCourses = bcs.coursesPerYear[2];
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,10 +117,8 @@ class _CourseDetailsState extends State<CourseDetails> {
                       onChanged: (String? newValue) {
                         setState(() {
                           dropdownvalue = newValue!;
+                          updateCourses(dropdownvalue);
                         });
-                        if (dropdownvalue == items[0]) {
-                          currentSubTitle = bcs.coursesPerYear[0].toString();
-                        }
                       },
                     ),
                   ],
@@ -116,25 +130,18 @@ class _CourseDetailsState extends State<CourseDetails> {
                 subTitle: 'Module Code',
                 backgroundColor: heraldGreen,
               ),
-              CourseInfo(
-                title: 'Fundamentals of Computing',
-                subTitle: '4C102',
-              ),
-              CourseInfo(
-                title: 'Introductary Programming',
-                subTitle: '4C12O',
-              ),
-              CourseInfo(
-                title: 'Web Technologies',
-                subTitle: '4C106',
-              ),
-              CourseInfo(
-                title: 'Game Technology',
-                subTitle: '4C053',
-              ),
-              CourseInfo(
-                title: 'Object Oriented Programming',
-                subTitle: '4C025',
+              // Displaying the current courses based on dropdown value
+              Expanded(
+                child: ListView.builder(
+                  itemCount: currentCourses.length,
+                  itemBuilder: (context, index) {
+                    final course = currentCourses[index];
+                    return CourseInfo(
+                      title: course.keys.first,
+                      subTitle: course.values.first,
+                    );
+                  },
+                ),
               ),
             ],
           ),

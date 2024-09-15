@@ -15,11 +15,14 @@ class LostAndFound extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: true,
       extendBody: false,
-      appBar: AppBar(title: Text('Lost and Found'), actions: [
-        IconButton(
-            icon: Icon(Iconsax.edit4, size: fontSize24),
-            onPressed: () => Get.to(RequestLostItem()))
-      ]),
+      appBar: AppBar(
+          automaticallyImplyLeading: false,
+          title: Text('Lost and Found'),
+          actions: [
+            IconButton(
+                icon: Icon(Iconsax.edit4, size: fontSize24),
+                onPressed: () => Get.to(RequestLostItem()))
+          ]),
       body: const LostAndFoundBody(),
     );
   }

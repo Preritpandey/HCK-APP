@@ -7,7 +7,8 @@ import 'package:hck_app/pages/lost_and_found/pages/lost_and_found.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final group;
+  const HomePage({super.key, required this.group});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,23 +16,23 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int selectedTab = 0;
+
   void changeTab(int index) {
     setState(() {
       selectedTab = index;
     });
   }
 
-  final List _pages = [
-    const HomeScreen(),
-    LostAndFound(),
-    // const LostAndFoundPage(),
-    const EventPage(),
-    const RoutinePage(),
-    // const CalanderPage(),
-    const ProfilePage(),
-  ];
   @override
   Widget build(BuildContext context) {
+    final List _pages = [
+      HomeScreen(group: widget.group, ), // Pass the group without const
+      const LostAndFound(),
+      const EventPage(),
+      const RoutinePage(),
+      const ProfilePage(),
+    ];
+
     return Scaffold(
       body: _pages[selectedTab],
       bottomNavigationBar: BottomNavigationBar(
@@ -55,25 +56,25 @@ class _HomePageState extends State<HomePage> {
                   AssetImage('assets/icons/search.png'),
                   color: iconColorBlack,
                 ),
-                label: 'home'),
+                label: 'search'),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage('assets/icons/notes.png'),
                   color: iconColorBlack,
                 ),
-                label: 'home'),
+                label: 'notes'),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage('assets/icons/calander.png'),
                   color: iconColorBlack,
                 ),
-                label: 'home'),
+                label: 'calendar'),
             BottomNavigationBarItem(
                 icon: ImageIcon(
                   AssetImage('assets/icons/profile.png'),
                   color: iconColorBlack,
                 ),
-                label: 'home'),
+                label: 'profile'),
           ]),
     );
   }

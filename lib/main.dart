@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/pages/HomePage/home.dart';
+import 'package:hck_app/pages/OnboardingPages/LoginPage.dart';
+import 'package:hck_app/pages/OnboardingPages/google_auth_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +16,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      // home: GoogleAuthPage(),
+      home: Loginpage(),
     );
   }
 }

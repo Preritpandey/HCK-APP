@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/controller/lost_and_found_controller.dart';
-import 'package:hck_app/pages/widgets/text_box.dart';
+import 'package:hck_app/widgets/text_box.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 

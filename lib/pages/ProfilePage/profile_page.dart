@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/CoursesPage/courses_page.dart';
+import 'package:hck_app/pages/ProfilePage/logout.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
@@ -25,28 +26,6 @@ class ProfilePage extends StatelessWidget {
                   children: [
                     const TextHeading(text: 'Profile'),
                     GestureDetector(
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (_) {
-                              return const SizedBox(
-                                height: 200,
-                                child: Dialog(
-                                  child: Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Are you sure?'),
-                                        Text('You will be logged out'),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            });
-                      },
                       child: const Row(
                         children: [
                           TextSubHeading(
@@ -59,6 +38,72 @@ class ProfilePage extends StatelessWidget {
                           )
                         ],
                       ),
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (_) {
+                            return Dialog(
+                              child: Container(
+                                width: MediaQuery.of(context).size.width * 0.75,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.25,
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text('Are you sure?',
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold)),
+                                    const SizedBox(height: 8),
+                                    const Text('You will be logged out',
+                                        style: TextStyle(fontSize: 16)),
+                                    const Spacer(),
+                                    Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                          },
+                                          child: const Text('Cancel'),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            logout(context);
+                                            // Navigator.of(context).pop();
+                                          },
+                                          child: const Text('Logout'),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+
+                      // showDialog(
+                      //     context: context,
+                      //     builder: (_) {
+                      //       return SizedBox(
+                      //         child: Dialog(
+                      //           child: Padding(
+                      //             padding: EdgeInsets.all(8.0),
+                      //             child: Column(
+                      //               crossAxisAlignment:
+                      //                   CrossAxisAlignment.start,
+                      //               children: [
+                      //                 Text('Are you sure?'),
+                      //                 Text('You will be logged out'),
+                      //               ],
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       );
+                      //     });
                     )
                   ],
                 ),

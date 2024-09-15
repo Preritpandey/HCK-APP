@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/controller/lost_and_found_controller.dart';
 import 'package:hck_app/pages/lost_and_found/widgets/individual_unclaimed_item.dart';
-import 'package:hck_app/pages/widgets/input_decoration.dart';
+import 'package:hck_app/widgets/input_decoration.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
 import 'unclaimed_items_count.dart';

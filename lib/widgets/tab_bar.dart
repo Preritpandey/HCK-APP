@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/pages/RoutinePage/calander_page.dart';
-import 'package:hck_app/pages/widgets/routine_card.dart';
-import 'package:hck_app/pages/widgets/tab_item.dart';
+import 'package:hck_app/widgets/routine_card.dart';
+import 'package:hck_app/widgets/tab_item.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 
@@ -15,6 +15,7 @@ class NavTabBar extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const TextHeading(
             text: 'Routine',
             size: 16,
@@ -29,7 +30,7 @@ class NavTabBar extends StatelessWidget {
                 ))
           ],
           bottom: const TabBar(
-            physics: ClampingScrollPhysics(),
+            physics: AlwaysScrollableScrollPhysics(),
             tabAlignment: TabAlignment.start,
             isScrollable: true,
             padding: EdgeInsets.only(bottom: 10),

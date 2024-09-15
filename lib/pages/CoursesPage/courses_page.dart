@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/courses_card.dart';
+import 'package:hck_app/widgets/courses_card.dart';
 import 'package:hck_app/resources/text_heading.dart';
 
 class CoursesPage extends StatelessWidget {

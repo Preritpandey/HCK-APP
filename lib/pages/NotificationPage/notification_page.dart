@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/pages/widgets/notification_card.dart';
+import 'package:hck_app/widgets/notification_card.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
 
