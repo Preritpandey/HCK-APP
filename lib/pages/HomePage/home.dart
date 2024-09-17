@@ -8,7 +8,8 @@ import 'package:hck_app/resources/constant.dart';
 
 class HomePage extends StatefulWidget {
   final group;
-  const HomePage({super.key, required this.group});
+  final String email;
+  const HomePage({super.key, required this.group, required this.email});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -26,11 +27,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List _pages = [
-      HomeScreen(group: widget.group, ), // Pass the group without const
+      HomeScreen(group: widget.group),
       const LostAndFound(),
       const EventPage(),
       const RoutinePage(),
-      const ProfilePage(),
+      ProfilePage(
+        email: widget.email,
+        group: widget.group,
+      ),
     ];
 
     return Scaffold(

@@ -6,7 +6,9 @@ import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final String email;
+  final String group;
+  const ProfilePage({super.key, required this.email, required this.group});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +73,6 @@ class ProfilePage extends StatelessWidget {
                                         TextButton(
                                           onPressed: () {
                                             logout(context);
-                                            // Navigator.of(context).pop();
                                           },
                                           child: const Text('Logout'),
                                         ),
@@ -84,26 +85,6 @@ class ProfilePage extends StatelessWidget {
                           },
                         );
                       },
-
-                      // showDialog(
-                      //     context: context,
-                      //     builder: (_) {
-                      //       return SizedBox(
-                      //         child: Dialog(
-                      //           child: Padding(
-                      //             padding: EdgeInsets.all(8.0),
-                      //             child: Column(
-                      //               crossAxisAlignment:
-                      //                   CrossAxisAlignment.start,
-                      //               children: [
-                      //                 Text('Are you sure?'),
-                      //                 Text('You will be logged out'),
-                      //               ],
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       );
-                      //     });
                     )
                   ],
                 ),
@@ -145,7 +126,7 @@ class ProfilePage extends StatelessWidget {
                             transform: GradientRotation(2),
                             tileMode: TileMode.repeated),
                       ),
-                      child: const Column(
+                      child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -163,14 +144,14 @@ class ProfilePage extends StatelessWidget {
                               ),
                               SizedBox(width: 20),
                               TextSubHeading(
-                                text: 'L4CG2',
+                                text: group,
                                 color: white,
                                 size: 16,
                               ),
                             ],
                           ),
                           TextSubHeading(
-                            text: 'np03cs22023334@heraldcollege.edu.np',
+                            text: email,
                             color: white,
                             size: 15,
                           )

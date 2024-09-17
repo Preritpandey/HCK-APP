@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/Notice/utils/internship_container.dart';
+import 'package:hck_app/pages/Notice/utils/internship_services.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
+import 'package:hck_app/models/internship_model.dart';
 
-class InternshipBody extends StatelessWidget {
+class InternshipBody extends StatefulWidget {
   const InternshipBody({Key? key}) : super(key: key);
+
+  @override
+  State<InternshipBody> createState() => _InternshipBodyState();
+}
+
+class _InternshipBodyState extends State<InternshipBody> {
+  late Future<List<Job>> _futureJobs;
+
+  @override
+  void initState() {
+    super.initState();
+    _futureJobs = JobService().fetchJobs();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +36,28 @@ class InternshipBody extends StatelessWidget {
               fontWeight: FontWeight.w600,
               size: fontSize16),
           Expanded(
-              child: ListView.builder(
-            itemCount: 3,
-            itemBuilder: (context, index) {
-              return const InternShipContainer();
-            },
-          ))
+            child: FutureBuilder<List<Job>>(
+              future: _futureJobs,
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (snapshot.hasError) {
+                  return Center(child: Text('Error: ${snapshot.error}'));
+                } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+                  return const Center(child: Text('No internships available'));
+                } else {
+                  final jobs = snapshot.data!;
+                  return ListView.builder(
+                    itemCount: jobs.length,
+                    itemBuilder: (context, index) {
+                      final job = jobs[index];
+                      return InternShipContainer(job: job);
+                    },
+                  );
+                }
+              },
+            ),
+          ),
         ],
       ),
     );

@@ -31,7 +31,7 @@ class EventPage extends StatelessWidget {
               children: [
                 CustomTabBar(tabString: tabStrings),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.015),
-                const Expanded(
+                Expanded(
                     child: TabBarView(
                   children: [EventBody(), InternshipBody()],
                 )),

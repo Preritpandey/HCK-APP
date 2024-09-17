@@ -33,14 +33,18 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       List<OngoingClassGroup> classes =
           await fetchOngoingClasses(); // Fetch from your API
-      if (classes.isNotEmpty) {
-        setState(() {
+      setState(() {
+        if (classes.isNotEmpty) {
           upcomingClass =
               classes.first; // Assign the first class as the upcoming class
           restClasses =
               classes.skip(1).toList(); // Skip the first and assign the rest
-        });
-      }
+        } else {
+          // No classes found
+          upcomingClass = null;
+          restClasses = [];
+        }
+      });
     } catch (error) {
       // Handle errors here
       print('Error fetching classes: $error');
@@ -128,6 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           // Upcoming Class Card
+// Upcoming Class Card
           Positioned(
             top: MediaQuery.of(context).size.height / 5,
             child: SizedBox(
@@ -210,7 +215,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                     : const Center(
-                        child: CircularProgressIndicator(),
+                        child: Text(
+                          "No classes today",
+                          style: TextStyle(color: Colors.grey, fontSize: 18),
+                        ),
                       ),
               ),
             ),

@@ -12,7 +12,7 @@ Future<void> logout(BuildContext context) async {
   // Navigate the user back to the login page and clear navigation history
   Navigator.pushAndRemoveUntil(
     context,
-    MaterialPageRoute(builder: (context) => const Loginpage()),
+    MaterialPageRoute(builder: (context) => LoginPage()),
     (Route<dynamic> route) => false,
   );
 }
