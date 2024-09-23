@@ -22,14 +22,14 @@ class NotificationCard extends StatelessWidget {
                   borderRadius:
                       BorderRadius.circular(10), // Same as ClipRRect radius
                 ),
-                child: const ExpansionTile(
+                child: ExpansionTile(
                   childrenPadding: EdgeInsets.zero,
                   iconColor: Colors.grey,
                   title: Text(
                     'Fee Payment Reminder',
                     style: TextStyle(color: heraldGreen),
                   ),
-                  children: <Widget>[
+                  children: const <Widget>[
                     Text(
                       'Dear Student, for your reminder your new semester college\nfee payment is deadline up to 17th November 2022.\nThank You! ',
                     ),

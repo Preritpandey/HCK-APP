@@ -10,8 +10,8 @@ class AppThemeData {
         primarySwatch: materialHeraldGreen,
         scaffoldBackgroundColor: white,
         fontFamily: fontFamily,
-        expansionTileTheme: const ExpansionTileThemeData(
-            childrenPadding: EdgeInsets.all(20),
+        expansionTileTheme: ExpansionTileThemeData(
+            childrenPadding: const EdgeInsets.all(20),
             textColor: heraldGreen,
             iconColor: heraldGreen),
         textTheme: Theme.of(context).textTheme.apply(
@@ -23,13 +23,13 @@ class AppThemeData {
           backgroundColor: white,
           iconTheme: IconThemeData(color: textColor),
         ),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
           elevation: 0,
           showSelectedLabels: false,
           showUnselectedLabels: false,
           backgroundColor: Colors.transparent,
           selectedItemColor: heraldGreen,
-          selectedIconTheme: IconThemeData(size: 35),
+          selectedIconTheme: const IconThemeData(size: 35),
           unselectedItemColor: iconColorBlack,
         ),
         listTileTheme:
@@ -52,17 +52,17 @@ class AppThemeData {
         backgroundColor: dark,
         iconTheme: IconThemeData(color: white),
       ),
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
         elevation: 0,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         backgroundColor: dark,
         selectedItemColor: heraldGreen,
         unselectedItemColor: Colors.grey,
-        selectedIconTheme: IconThemeData(size: 35),
+        selectedIconTheme: const IconThemeData(size: 35),
       ),
-      expansionTileTheme: const ExpansionTileThemeData(
-          childrenPadding: EdgeInsets.all(20),
+      expansionTileTheme: ExpansionTileThemeData(
+          childrenPadding: const EdgeInsets.all(20),
           textColor: heraldGreen,
           iconColor: heraldGreen),
       textTheme: Theme.of(context).textTheme.apply(

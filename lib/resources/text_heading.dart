@@ -10,7 +10,7 @@ class TextHeading extends StatelessWidget {
       {Key? key,
       this.size = 24,
       required this.text,
-      this.color,
+      this.color = textColor,
       this.maxLines = 2})
       : super(key: key);
 
@@ -18,8 +18,9 @@ class TextHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(text!,
         maxLines: maxLines,
-        overflow: TextOverflow.ellipsis,
+        overflow: TextOverflow.visible,
         style: TextStyle(
+          fontFamily: fontFamily,
           color: color,
           fontSize: size == 24 ? fontSize24 : size,
           fontWeight: FontWeight.bold,

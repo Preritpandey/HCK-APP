@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hck_app/resources/constant.dart';
 
 ButtonStyle heraldButtonStyle(
-    {Color color = heraldGreen,
+    { Color color =  heraldGreen,
     double radius = 15,
     double fixedSizeWidth = 0.9,
     double fixedSizeHeight = 0.06}) {

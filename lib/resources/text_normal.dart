@@ -26,9 +26,11 @@ class TextNormal extends StatelessWidget {
         textAlign: textAlign,
         maxLines: maxLines,
         style: TextStyle(
-            color: color,
-            fontSize: size == 16 ? fontSize16 : size,
-            fontWeight: fontWeight,
-            overflow: overflow));
+          color: color,
+          fontSize: size == 16 ? fontSize16 : size,
+          fontWeight: fontWeight,
+          overflow: overflow,
+          fontFamily: fontFamily,
+        ));
   }
 }

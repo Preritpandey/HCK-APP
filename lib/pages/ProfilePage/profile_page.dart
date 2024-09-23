@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/pages/CoursesPage/courses_page.dart';
+import 'package:hck_app/pages/OnboardingPages/changePasswordPage.dart';
+import 'package:get/get.dart';
 import 'package:hck_app/pages/ProfilePage/logout.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -100,7 +102,7 @@ class ProfilePage extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    gradient: const LinearGradient(
+                    gradient: LinearGradient(
                         begin: Alignment.topRight,
                         end: Alignment.bottomLeft,
                         colors: [
@@ -191,9 +193,9 @@ class ProfilePage extends StatelessWidget {
                           height: MediaQuery.of(context).size.height * 0.02),
                       Row(
                         children: [
-                          const CircleAvatar(
+                          CircleAvatar(
                               backgroundColor: heraldGreen,
-                              child: Icon(
+                              child: const Icon(
                                 Icons.menu_book_outlined,
                                 size: 20,
                                 color: white,
@@ -221,7 +223,13 @@ class ProfilePage extends StatelessWidget {
                             },
                           ),
                         ],
-                      )
+                      ),
+                      SizedBox(height: 20),
+                      ElevatedButton(
+                          onPressed: () {
+                            Get.to(ChangePasswordPage());
+                          },
+                          child: Text('Change'))
                     ],
                   ),
                 ))

@@ -61,6 +61,8 @@ flutter_native_splash:
   image: "assets/images/HCK.png"
 
 dev_dependencies:
+  hive_generator: ^1.1.0
+  build_runner: ^2.1.0
   flutter_test:
     sdk: flutter
   flutter_native_splash: ^2.2.4
@@ -105,11 +107,13 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Montserrat
-  #     fonts:
-  #       - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
-  #       - asset: assets/fonts/Montserrat/Montserrat-Medium.ttf
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat/Montserrat-Black.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Medium.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat/Montserrat-Bold.ttf
 
   #         style: italic
   #   - family: Montserrat

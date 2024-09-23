@@ -8,8 +8,8 @@ import 'package:hck_app/resources/constant.dart';
 
 class HomePage extends StatefulWidget {
   final group;
-  final String email;
-  const HomePage({super.key, required this.group, required this.email});
+  final email;
+  HomePage({super.key, required this.group, required this.email});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
       HomeScreen(group: widget.group),
       const LostAndFound(),
       const EventPage(),
-      const RoutinePage(),
+      RoutinePage(),
       ProfilePage(
         email: widget.email,
         group: widget.group,
@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 label: 'notes'),
             BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage('assets/icons/calander.png'),
+                  AssetImage('icons/calendar.png'),
                   color: iconColorBlack,
                 ),
                 label: 'calendar'),

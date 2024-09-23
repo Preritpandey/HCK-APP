@@ -1,64 +1,60 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hck_app/controller/class_controller.dart';
 import 'package:hck_app/pages/RoutinePage/calander_page.dart';
-import 'package:hck_app/widgets/routine_card.dart';
-import 'package:hck_app/widgets/tab_item.dart';
-import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
+import 'package:hck_app/widgets/custom_tabBar.dart';
+import 'package:hck_app/widgets/routine_card.dart';
 
 class NavTabBar extends StatelessWidget {
-  const NavTabBar({super.key});
+  final ClassController classController = Get.put(ClassController());
 
   @override
   Widget build(BuildContext context) {
+    List<String> tabStrings = [
+      "Yesterday",
+      "Today",
+      "Tomorrow",
+      ...classController.getDaysAfterTomorrow()
+    ];
+
     return DefaultTabController(
-      length: 5,
+      initialIndex: 1,
+      length: tabStrings
+          .length, // Ensure the TabController length matches the number of tabs
       child: Scaffold(
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: const TextHeading(
-            text: 'Routine',
-            size: 16,
-          ),
+          title: const TextHeading(text: 'Routine'),
           actions: [
             IconButton(
-                onPressed: () => Get.to(CalanderPage()),
-                icon: Image.asset(
-                  'assets/icons/calander.png',
-                  height: 28,
-                  width: 28,
-                ))
+              onPressed: () => Get.to(() => CalanderPage()),
+              icon: ImageIcon(AssetImage('icons/calendar.png')),
+            )
           ],
-          bottom: const TabBar(
-            physics: AlwaysScrollableScrollPhysics(),
-            tabAlignment: TabAlignment.start,
-            isScrollable: true,
-            padding: EdgeInsets.only(bottom: 10),
-            indicatorSize: TabBarIndicatorSize.label,
-            indicatorWeight: BorderSide.strokeAlignCenter,
-            indicatorPadding: EdgeInsets.zero,
-            indicator: BoxDecoration(
-              color: heraldGreen,
-              borderRadius: BorderRadius.all(Radius.circular(5)),
-            ),
-            labelColor: Colors.white,
-            unselectedLabelColor: Colors.black54,
-            tabs: [
-              TabItem(title: 'Yesterday'),
-              TabItem(title: 'Today'),
-              TabItem(title: 'Tomorrow'),
-              TabItem(title: '26 sep'),
-              TabItem(title: '27 sep'),
-            ],
-          ),
         ),
-        body: const TabBarView(
+        body: Column(
           children: [
-            EventCard(),
-            EventCard(),
-            EventCard(),
-            EventCard(),
-            EventCard(),
+            CustomTabBar(tabString: tabStrings),
+            Expanded(
+              child: Obx(() {
+                if (classController.isLoading.value) {
+                  return Center(child: CircularProgressIndicator());
+                } else {
+                  return TabBarView(
+                    children: [
+                      EventCard(day: classController.getYesterday()),
+                      EventCard(day: classController.getToday()),
+                      EventCard(day: classController.getTomorrow()),
+                      ...classController
+                          .getDaysAfterTomorrow()
+                          .map((day) => EventCard(day: day))
+                          .toList(),
+                    ],
+                  );
+                }
+              }),
+            ),
           ],
         ),
       ),

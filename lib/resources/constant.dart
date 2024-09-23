@@ -4,8 +4,11 @@ const String versionName = 'Release v1.0.0';
 
 const String fontFamily = 'Montserrat';
 // HeraldGreen_HEX = 74C043
+// Color heraldGreen = Color.fromARGB(255, 116, 192, 67);
 const Color heraldGreen = Color.fromRGBO(116, 192, 67, 1);
+
 const Color green = Color.fromRGBO(24, 173, 103, 1);
+const Color marginColor = Color.fromRGBO(223, 223, 223, 1);
 const Color bluishGreen = Color.fromRGBO(0, 149, 125, 1);
 const Color darkBluishGreen = Color.fromRGBO(47, 72, 88, 1);
 const Color darkBlack = Color.fromRGBO(52, 52, 52, 1);
@@ -24,6 +27,7 @@ const Color grey = Color(0xFFF0F0F0);
 const Color unselectedLableColor = Color.fromRGBO(47, 72, 83, 0.3);
 const Color backgroundWhite = Color.fromRGBO(231, 246, 244, 0.898);
 const Color cardBackground = Color.fromRGBO(240, 240, 240, 1);
+const Color darkGrey = Color.fromARGB(255, 116, 119, 119);
 const Color transparent = Colors.transparent;
 const MaterialColor materialHeraldGreen = MaterialColor(
   _heraldGreenPrimary,

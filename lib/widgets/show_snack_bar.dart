@@ -25,7 +25,7 @@ SnackBar customSnackBar(context, message) => SnackBar(
       ),
     ),
     shape: RoundedRectangleBorder(
-        side: const BorderSide(
+        side: BorderSide(
           color: heraldGreen,
           width: 2,
         ),

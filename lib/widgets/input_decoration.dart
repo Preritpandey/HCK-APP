@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hck_app/resources/constant.dart';
 
 OutlineInputBorder focusedBorder = OutlineInputBorder(
-  borderSide: const BorderSide(color: heraldGreen),
+  borderSide: BorderSide(color: heraldGreen),
   borderRadius: BorderRadius.circular(10),
 );
 

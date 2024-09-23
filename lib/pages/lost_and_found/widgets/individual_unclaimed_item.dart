@@ -103,7 +103,7 @@ class IndividualUnclaimedItem extends StatelessWidget {
                               child: TextButton(
                                   onPressed: () =>
                                       controller.setFilterCategoryItem('All'),
-                                  child: const TextNormal(
+                                  child: TextNormal(
                                     text: 'Back to All Categories',
                                     color: heraldGreen,
                                   )),

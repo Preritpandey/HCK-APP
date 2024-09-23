@@ -84,7 +84,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Center(
+                    Center(
                         child: TextBody(
                       text: 'Course Level',
                       color: heraldGreen,

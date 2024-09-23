@@ -6,13 +6,15 @@ class RoutinePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SafeArea(
+    return SafeArea(
       child: DefaultTabController(
-        length: 4,
+        length: 8,
         initialIndex: 1,
         child: Column(
           children: [
-            Expanded(child: NavTabBar()),
+            Expanded(
+              
+              child: NavTabBar()),
           ],
         ),
       ),

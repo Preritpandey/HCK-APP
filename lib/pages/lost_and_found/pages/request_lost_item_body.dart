@@ -20,7 +20,7 @@ class RequestLostItem extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request a Lost Item'),
+        title: TextHeading(text: 'Request a Lost Item'),
       ),
       body: SingleChildScrollView(
         child: Column(

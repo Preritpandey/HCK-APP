@@ -23,6 +23,7 @@ class TextSubHeading extends StatelessWidget {
         maxLines: maxLines,
         overflow: TextOverflow.ellipsis,
         style: TextStyle(
+          fontFamily: fontFamily,
           color: color,
           fontSize: size == 14 ? fontSize14 : size,
           fontWeight: FontWeight.w400,
