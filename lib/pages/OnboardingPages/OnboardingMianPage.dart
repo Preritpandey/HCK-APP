@@ -4,11 +4,9 @@ import 'package:hck_app/pages/HomePage/home.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class CheckSchedulePage extends StatefulWidget {
-  CheckSchedulePage({Key? key, required this.title, required this.group})
-      : super(key: key);
+  CheckSchedulePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
-  final group;
 
   @override
   _CheckSchedulePageState createState() => _CheckSchedulePageState();
@@ -84,7 +82,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(group: '',email: '',),
+      body: HomePage(),
     );
   }
 }

@@ -41,16 +41,8 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
-      
       getPages: [
-        GetPage(
-            name: '/HomePage',
-            page: () => HomePage(
-                  group:
-                      '', // fields are empty and it will not affect app functionality.But it needs to be change
-
-                  email: '',
-                )),
+        GetPage(name: '/HomePage', page: () => HomePage()),
       ],
     );
   }

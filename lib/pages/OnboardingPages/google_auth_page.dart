@@ -52,7 +52,6 @@ class GoogleAuthPage extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => CheckSchedulePage(
                                         title: 'jkasd',
-                                        group: null,
                                       )));
                         },
                         child: Row(

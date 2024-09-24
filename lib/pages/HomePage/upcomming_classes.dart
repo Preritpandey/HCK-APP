@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hck_app/models/routine_model.dart';
+import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
+import 'package:hck_app/widgets/button_style.dart';
 import 'package:intl/intl.dart';
 
 class UpcomingClasses extends StatelessWidget {
@@ -63,7 +65,11 @@ class UpcomingClasses extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(10),
-                      child: TextNormal(text: 'Room: ${ongoingClass.roomName}'),
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('Set Reminder'),
+                        style: heraldButtonStyle(color: white),
+                      ),
                     ),
                   ],
                 ),

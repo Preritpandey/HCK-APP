@@ -7,9 +7,7 @@ import 'package:hck_app/pages/lost_and_found/pages/lost_and_found.dart';
 import 'package:hck_app/resources/constant.dart';
 
 class HomePage extends StatefulWidget {
-  final group;
-  final email;
-  HomePage({super.key, required this.group, required this.email});
+  HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -27,14 +25,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     final List _pages = [
-      HomeScreen(group: widget.group),
+      HomeScreen(),
       const LostAndFound(),
       const EventPage(),
       RoutinePage(),
-      ProfilePage(
-        email: widget.email,
-        group: widget.group,
-      ),
+      ProfilePage(),
     ];
 
     return Scaffold(

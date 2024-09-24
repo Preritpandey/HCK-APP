@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hck_app/controller/login_controller.dart';
 import 'package:hck_app/pages/CoursesPage/courses_page.dart';
-import 'package:hck_app/pages/OnboardingPages/changePasswordPage.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/pages/ProfilePage/logout.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
+import 'package:hck_app/widgets/button_style.dart';
 
 class ProfilePage extends StatelessWidget {
-  final String email;
-  final String group;
-  const ProfilePage({super.key, required this.email, required this.group});
+  final LoginController loginController = Get.put(LoginController());
+  ProfilePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -145,18 +145,16 @@ class ProfilePage extends StatelessWidget {
                                 color: white,
                               ),
                               SizedBox(width: 20),
-                              TextSubHeading(
-                                text: group,
-                                color: white,
-                                size: 16,
-                              ),
+                              Obx(() => TextSubHeading(
+                                  text: loginController.group.value,
+                                  color: white,
+                                  size: 16)),
                             ],
                           ),
-                          TextSubHeading(
-                            text: email,
-                            color: white,
-                            size: 15,
-                          )
+                          Obx(() => TextSubHeading(
+                              text: loginController.email.value,
+                              color: white,
+                              size: 15)),
                         ],
                       ),
                     ),
@@ -226,10 +224,10 @@ class ProfilePage extends StatelessWidget {
                       ),
                       SizedBox(height: 20),
                       ElevatedButton(
-                          onPressed: () {
-                            Get.to(ChangePasswordPage());
-                          },
-                          child: Text('Change'))
+                        onPressed: () {},
+                        child: Text('Set Reminder'),
+                        style: heraldButtonStyle(),
+                      ),
                     ],
                   ),
                 ))

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hck_app/controller/login_controller.dart';
 import 'package:hck_app/controller/routine_controller.dart';
 import 'package:hck_app/pages/HomePage/upcomming_classes.dart';
 import 'package:hck_app/pages/Notice/pages/event_body.dart';
@@ -11,10 +12,10 @@ import 'package:hck_app/resources/text_subheading.dart';
 import 'package:intl/intl.dart';
 
 class HomeScreen extends StatelessWidget {
-  final String group;
-  HomeScreen({super.key, required this.group});
+  HomeScreen({super.key});
 
   final RoutineController routineController = Get.put(RoutineController());
+  final LoginController loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -92,7 +93,8 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         Image.asset('assets/images/student.png'),
                         const SizedBox(height: 3),
-                        TextSubHeading(text: group),
+                        Obx(() =>
+                            TextSubHeading(text: loginController.group.value)),
                       ],
                     ),
                   ),
