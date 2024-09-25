@@ -3,7 +3,10 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:hck_app/models/routine_model.dart';
 import 'package:hck_app/pages/HomePage/home.dart';
+import 'package:hck_app/pages/HomePage/home_screen.dart';
+import 'package:hck_app/pages/HomePage/newHomeScreen.dart';
 import 'package:hck_app/pages/OnboardingPages/LoginPage.dart';
+import 'package:hck_app/pages/SplashPages/splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:path_provider/path_provider.dart';
@@ -40,9 +43,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: SplashScreen(),
       getPages: [
         GetPage(name: '/HomePage', page: () => HomePage()),
+        GetPage(name: '/homeScreen', page: () => HomeScreen()),
+        GetPage(name: '/loginScreen', page: () => LoginPage()),
       ],
     );
   }

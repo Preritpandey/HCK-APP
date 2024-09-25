@@ -29,7 +29,7 @@ class NavTabBar extends StatelessWidget {
           actions: [
             IconButton(
               onPressed: () => Get.to(() => CalanderPage()),
-              icon: ImageIcon(AssetImage('icons/calendar.png')),
+              icon: ImageIcon(AssetImage('assets/icons/calendar.png')),
             )
           ],
         ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
+import 'package:hck_app/models/schedule_model.dart';
 import 'package:hck_app/resources/api_constants.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
@@ -16,6 +17,7 @@ class RoutineController extends GetxController {
 
   final Box<OngoingClassGroup> routineBox =
       Hive.box<OngoingClassGroup>('routineBox');
+
   Timer? _timer;
   DateTime selectedDate = DateTime.now(); // Default to current date
 
@@ -41,6 +43,17 @@ class RoutineController extends GetxController {
   Future<void> fetchClasses() async {
     try {
       isLoading(true);
+
+      // First, check if cached data is available and display it
+      if (routineBox.isNotEmpty) {
+        List<OngoingClassGroup> cachedClasses = routineBox.values.toList();
+        _filterClasses(cachedClasses); // Use cached data if available
+      } else {
+        errorMessage(
+            'No cached data available. Please connect to the internet.');
+      }
+
+      // Fetch fresh data from API
       final prefs = await SharedPreferences.getInstance();
       final accessToken = prefs.getString('accessToken');
       final group = prefs.getString('group');
@@ -58,12 +71,16 @@ class RoutineController extends GetxController {
         List<OngoingClassGroup> classes =
             classList.map((data) => OngoingClassGroup.fromJson(data)).toList();
 
+        // Store the fetched classes into the Hive box (cache)
+        await routineBox.clear();
+        await routineBox.addAll(classes);
         // Filter classes based on the selected date
         _filterClasses(classes);
       } else {
         throw Exception('Failed to load ongoing classes');
       }
     } catch (e) {
+      // If API call fails, fallback to cached data if it's not already loaded
       if (routineBox.isNotEmpty) {
         List<OngoingClassGroup> cachedClasses = routineBox.values.toList();
         _filterClasses(cachedClasses); // Use cached data if available
@@ -74,6 +91,44 @@ class RoutineController extends GetxController {
       isLoading(false);
     }
   }
+
+// ------------------old code------------
+  // Future<void> fetchClasses() async {
+  //   try {
+  //     isLoading(true);
+  //     final prefs = await SharedPreferences.getInstance();
+  //     final accessToken = prefs.getString('accessToken');
+  //     final group = prefs.getString('group');
+  //     final url = Uri.parse('${API.getRoutineUrl}$group');
+
+  //     final response = await http.get(url, headers: {
+  //       'Authorization': 'Bearer $accessToken',
+  //       'Content-Type': 'application/json',
+  //     });
+
+  //     if (response.statusCode == 200) {
+  //       Map<String, dynamic> jsonData = json.decode(response.body);
+  //       List<dynamic> classList = jsonData['ongoingClassGroup/s'];
+
+  //       List<OngoingClassGroup> classes =
+  //           classList.map((data) => OngoingClassGroup.fromJson(data)).toList();
+
+  //       // Filter classes based on the selected date
+  //       _filterClasses(classes);
+  //     } else {
+  //       throw Exception('Failed to load ongoing classes');
+  //     }
+  //   } catch (e) {
+  //     if (routineBox.isNotEmpty) {
+  //       List<OngoingClassGroup> cachedClasses = routineBox.values.toList();
+  //       _filterClasses(cachedClasses); // Use cached data if available
+  //     } else {
+  //       errorMessage('Failed to fetch classes. No data available.');
+  //     }
+  //   } finally {
+  //     isLoading(false);
+  //   }
+  // }
 
 // Filter the classes based on the selected date
   void _filterClasses(List<OngoingClassGroup> classes) {

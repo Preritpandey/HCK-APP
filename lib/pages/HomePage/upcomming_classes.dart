@@ -13,7 +13,7 @@ class UpcomingClasses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height / 4.5,
+      height: MediaQuery.of(context).size.height / 4,
       width: MediaQuery.of(context).size.width,
       child: Padding(
         padding: const EdgeInsets.only(right: 25),
@@ -29,8 +29,9 @@ class UpcomingClasses extends StatelessWidget {
 
             return SizedBox(
               height: MediaQuery.of(context).size.height / 5,
-              width: MediaQuery.of(context).size.width * 0.5,
+              width: MediaQuery.of(context).size.width * 0.6,
               child: Card(
+                elevation: 0,
                 shape: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                   borderSide: BorderSide(
@@ -39,6 +40,7 @@ class UpcomingClasses extends StatelessWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(10),
@@ -56,7 +58,7 @@ class UpcomingClasses extends StatelessWidget {
                       child: Row(
                         children: [
                           const Icon(Icons.access_time_outlined,
-                              color: Colors.black),
+                              size: 18, color: Colors.black),
                           TextNormal(
                               text:
                                   '${formattedStartTime} - ${formattedEndTime}'),
@@ -67,8 +69,11 @@ class UpcomingClasses extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       child: ElevatedButton(
                         onPressed: () {},
-                        child: Text('Set Reminder'),
-                        style: heraldButtonStyle(color: white),
+                        child: Text(
+                          'Set Reminder',
+                          style: TextStyle(color: white),
+                        ),
+                        style: heraldButtonStyle(color: heraldGreen),
                       ),
                     ),
                   ],

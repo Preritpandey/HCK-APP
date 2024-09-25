@@ -79,13 +79,15 @@ class EventCard extends StatelessWidget {
                                   text: classItem.startTime.split(":")[0] +
                                       ":" +
                                       classItem.startTime.split(":")[1]),
-                              SizedBox(width: 3),
+                              // SizedBox(width: 3),
                               SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width / 3.5),
+                                  width: MediaQuery.of(context).size.width / 8),
                               Icon(Icons.location_on,
                                   color: Colors.green, size: 15),
-                              TextNormal(text: classItem.roomName),
+                              TextNormal(
+                                text: classItem.roomName,
+                                // size: 10,
+                              ),
                               SizedBox(
                                   width:
                                       MediaQuery.of(context).size.width / 20),

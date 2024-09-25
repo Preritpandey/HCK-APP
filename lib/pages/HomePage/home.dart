@@ -33,6 +33,13 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        toolbarHeight: MediaQuery.of(context).size.height * 0,
+      
+        backgroundColor: backgroundWhite,
+        elevation: 0,
+      ),
       body: _pages[selectedTab],
       bottomNavigationBar: BottomNavigationBar(
           unselectedItemColor: null,
@@ -64,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                 label: 'notes'),
             BottomNavigationBarItem(
                 icon: ImageIcon(
-                  AssetImage('icons/calendar.png'),
+                  AssetImage('assets/icons/calendar.png'),
                   color: iconColorBlack,
                 ),
                 label: 'calendar'),
