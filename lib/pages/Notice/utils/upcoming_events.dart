@@ -8,12 +8,11 @@ import '../../../data/events_model.dart';
 
 class UpcomingEvents extends StatelessWidget {
   const UpcomingEvents(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.subTitle,
       required this.date,
-      required this.events})
-      : super(key: key);
+      required this.events});
   final String title;
   final String subTitle;
   final String date;
@@ -51,7 +50,7 @@ class UpcomingEvents extends StatelessWidget {
             ],
           ),
           InkWell(
-            onTap: () => Get.to(EventsDetails(), arguments: events),
+            onTap: () => Get.to(const EventsDetails(), arguments: events),
             child: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(

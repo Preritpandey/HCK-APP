@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
 
@@ -7,10 +7,10 @@ class UnclaimedItemsCount extends StatelessWidget {
   final LostAndFoundController controller;
   final List<Map<String, dynamic>> data;
   const UnclaimedItemsCount({
-    Key? key,
+    super.key,
     required this.data,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class UnclaimedItemsCount extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(
               vertical: MediaQuery.of(context).size.height * 0.01),
-          child: TextNormal(
+          child: const TextNormal(
               text: 'No. of Unclaimed Items',
               size: fontSize16,
               fontWeight: FontWeight.w600),

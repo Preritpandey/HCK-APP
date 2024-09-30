@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
-import 'package:hck_app/controller/lost_and_found_model.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
+import 'package:hck_app/models/lost_and_found_model.dart';
 import 'package:hck_app/widgets/no_items_found.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
@@ -10,10 +10,10 @@ class IndividualUnclaimedItem extends StatelessWidget {
   final List<Map<String, dynamic>> data;
   final LostAndFoundController controller;
   const IndividualUnclaimedItem({
-    Key? key,
+    super.key,
     required this.data,
     required this.controller,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class IndividualUnclaimedItem extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(
                       vertical: MediaQuery.of(context).size.height * 0.01),
-                  child: TextNormal(
+                  child: const TextNormal(
                     text: 'Unclaimed Items',
                     size: fontSize16,
                     fontWeight: FontWeight.w600,
@@ -84,7 +84,7 @@ class IndividualUnclaimedItem extends StatelessWidget {
                                       horizontal:
                                           MediaQuery.of(context).size.width *
                                               0.03),
-                                  child: TextNormal(
+                                  child: const TextNormal(
                                       text: 'Mark as Found',
                                       color: Colors.white,
                                       size: fontSize14,
@@ -103,7 +103,7 @@ class IndividualUnclaimedItem extends StatelessWidget {
                               child: TextButton(
                                   onPressed: () =>
                                       controller.setFilterCategoryItem('All'),
-                                  child: TextNormal(
+                                  child: const TextNormal(
                                     text: 'Back to All Categories',
                                     color: heraldGreen,
                                   )),

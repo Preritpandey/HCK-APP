@@ -8,13 +8,12 @@ class TextSubHeading extends StatelessWidget {
   final TextAlign textAlign;
   final int maxLines;
   const TextSubHeading(
-      {Key? key,
+      {super.key,
       this.size = 14,
       required this.text,
       this.color,
       this.maxLines = 3,
-      this.textAlign = TextAlign.left})
-      : super(key: key);
+      this.textAlign = TextAlign.left});
 
   @override
   Widget build(BuildContext context) {

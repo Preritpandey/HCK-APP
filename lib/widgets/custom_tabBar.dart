@@ -3,7 +3,7 @@ import 'package:hck_app/resources/constant.dart';
 
 class CustomTabBar extends StatelessWidget {
   final List<String> tabString;
-  const CustomTabBar({Key? key, required this.tabString}) : super(key: key);
+  const CustomTabBar({super.key, required this.tabString});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class CustomTabBar extends StatelessWidget {
 
 class _CustomTabBuilder extends StatelessWidget {
   final String text;
-  const _CustomTabBuilder({Key? key, required this.text}) : super(key: key);
+  const _CustomTabBuilder({required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class _CustomTabBuilder extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: fontSize14,
                     fontWeight: FontWeight.w500,
                   ),

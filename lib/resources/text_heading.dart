@@ -7,12 +7,11 @@ class TextHeading extends StatelessWidget {
   final Color? color;
   final int maxLines;
   const TextHeading(
-      {Key? key,
+      {super.key,
       this.size = 24,
       required this.text,
       this.color = textColor,
-      this.maxLines = 2})
-      : super(key: key);
+      this.maxLines = 2});
 
   @override
   Widget build(BuildContext context) {

@@ -9,12 +9,11 @@ class TextBox extends StatelessWidget {
   final bool isRequired;
   final double widthFactor;
   const TextBox(
-      {Key? key,
+      {super.key,
       required this.controller,
       required this.label,
       required this.isRequired,
-      this.widthFactor = 0.43})
-      : super(key: key);
+      this.widthFactor = 0.43});
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
 import 'package:hck_app/pages/lost_and_found/widgets/individual_unclaimed_item.dart';
 import 'package:hck_app/widgets/input_decoration.dart';
 import 'package:hck_app/resources/constant.dart';
@@ -9,7 +9,7 @@ import 'package:hck_app/resources/text_normal.dart';
 import 'unclaimed_items_count.dart';
 
 class PendingItems extends StatelessWidget {
-  const PendingItems({Key? key}) : super(key: key);
+  const PendingItems({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class PendingItems extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: MediaQuery.of(context).size.height * 0.01),
-                child: TextNormal(
+                child: const TextNormal(
                   text: 'Choose a Category',
                   size: fontSize16,
                   fontWeight: FontWeight.w600,
@@ -91,7 +91,7 @@ class PendingItems extends StatelessWidget {
                     bottomPadding: MediaQuery.of(context).size.height * 0.004),
                 onChanged: (item) => controller.setFilterCategoryItem(item!),
                 value: controller.selectedFilterCategory.value,
-                hint: TextNormal(
+                hint: const TextNormal(
                     text: 'All', size: fontSize16, fontWeight: FontWeight.w600),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.04),

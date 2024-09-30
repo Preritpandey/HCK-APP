@@ -84,7 +84,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Center(
+                    const Center(
                         child: TextBody(
                       text: 'Course Level',
                       color: heraldGreen,
@@ -125,7 +125,7 @@ class _CourseDetailsState extends State<CourseDetails> {
                 ),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 0.03),
-              CourseInfo(
+              const CourseInfo(
                 title: 'Module Name',
                 subTitle: 'Module Code',
                 backgroundColor: heraldGreen,

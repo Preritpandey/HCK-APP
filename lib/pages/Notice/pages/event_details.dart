@@ -7,20 +7,20 @@ import 'package:iconsax/iconsax.dart';
 import '../../../data/events_model.dart';
 
 class EventsDetails extends StatelessWidget {
-  const EventsDetails({Key? key}) : super(key: key);
+  const EventsDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
     Events data = ModalRoute.of(context)!.settings.arguments as Events;
     return Scaffold(
-      appBar: AppBar(title: Text("Event Details")),
+      appBar: AppBar(title: const Text("Event Details")),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('assets/images/HCK.png'),
                       fit: BoxFit.cover)),
@@ -60,7 +60,7 @@ class EventsDetails extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.02,
             ),
-            TextNormal(
+            const TextNormal(
               text: "Event Description",
               fontWeight: FontWeight.w600,
               size: fontSize14,
@@ -76,7 +76,7 @@ class EventsDetails extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8)),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                child: TextNormal(
+                child: const TextNormal(
                   text:
                       "Lorem ipsum dolor sit amet consectetur. Sapien diam ornare eget hendrerit ullamcorper egestas consectetur eget. Leo quis ipsum eu aliquam. Ipsum enim feugiat rutrum a ultricies gravida vulputate pellentesque.\n\nLorem ipsum dolor sit amet consectetur. Sapien diam ornare eget hendrerit ullamcorper egestas consectetur eget. Leo quis ipsum eu aliquam. Ipsum enim feugiat rutrum a ultricies gravida vulputate pellentesque.",
                   size: fontSize10,
@@ -84,7 +84,7 @@ class EventsDetails extends StatelessWidget {
           ]),
         ),
       ),
-      bottomSheet: Row(
+      bottomSheet: const Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextNormal(

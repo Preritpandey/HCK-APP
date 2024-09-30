@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
-import 'package:hck_app/controller/lost_and_found_model.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
+import 'package:hck_app/models/lost_and_found_model.dart';
 import 'package:hck_app/widgets/no_items_found.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -10,7 +10,7 @@ import 'package:hck_app/resources/text_normal.dart';
 import 'package:iconsax/iconsax.dart';
 
 class RequestHistory extends StatelessWidget {
-  const RequestHistory({Key? key}) : super(key: key);
+  const RequestHistory({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,12 +72,11 @@ class RequestHistory extends StatelessWidget {
 
 class _Card extends StatelessWidget {
   const _Card({
-    Key? key,
     required this.requestHistory,
     required this.status,
     required this.statusColor,
     required this.index,
-  }) : super(key: key);
+  });
 
   final List<LostAndFoundDetails> requestHistory;
   final String status;

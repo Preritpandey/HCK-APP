@@ -1,7 +1,7 @@
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
 import 'package:hck_app/widgets/input_decoration.dart';
 import 'package:hck_app/widgets/text_box.dart';
 import 'package:hck_app/resources/constant.dart';
@@ -9,7 +9,7 @@ import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_subheading.dart';
 
 class ItemDetails extends StatelessWidget {
-  const ItemDetails({Key? key}) : super(key: key);
+  const ItemDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class ItemDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextHeading(text: "Item Details", size: fontSize20),
+        const TextHeading(text: "Item Details", size: fontSize20),
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Container(
           padding: EdgeInsets.only(
@@ -38,7 +38,7 @@ class ItemDetails extends StatelessWidget {
           decoration: inputDecoration(context, "Item Category", true,
               bottomPadding: 10),
           onChanged: (item) => controller.setCategoryItem(item!),
-          hint: TextSubHeading(
+          hint: const TextSubHeading(
             text: "Choose Category...",
             size: fontSize12,
           ),
@@ -58,7 +58,7 @@ class ItemDetails extends StatelessWidget {
                             ? 'Please enter a valid date'
                             : null,
                     initialValue: controller.selectedDate.value,
-                    dateTextStyle: TextStyle(
+                    dateTextStyle: const TextStyle(
                       fontSize: fontSize14,
                       fontWeight: FontWeight.w400,
                     ),
@@ -81,7 +81,7 @@ class ItemDetails extends StatelessWidget {
                       bottomPadding:
                           MediaQuery.of(context).size.height * 0.004),
                   onChanged: (item) => controller.setBlockItem(item!),
-                  hint: TextSubHeading(
+                  hint: const TextSubHeading(
                     text: "Select Block...",
                     size: fontSize12,
                   ),

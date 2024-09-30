@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/class_controller.dart';
-import 'package:hck_app/pages/RoutinePage/calander_page.dart';
+import 'package:hck_app/services/schedule_service.dart';
+import 'package:hck_app/pages/Routine/calander_page.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/widgets/custom_tabBar.dart';
 import 'package:hck_app/widgets/routine_card.dart';
 
 class NavTabBar extends StatelessWidget {
   final ClassController classController = Get.put(ClassController());
+
+  NavTabBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +30,8 @@ class NavTabBar extends StatelessWidget {
           title: const TextHeading(text: 'Routine'),
           actions: [
             IconButton(
-              onPressed: () => Get.to(() => CalanderPage()),
-              icon: ImageIcon(AssetImage('assets/icons/calendar.png')),
+              onPressed: () => Get.to(() => const CalanderPage()),
+              icon: const ImageIcon(AssetImage('assets/icons/calendar.png')),
             )
           ],
         ),
@@ -39,7 +41,7 @@ class NavTabBar extends StatelessWidget {
             Expanded(
               child: Obx(() {
                 if (classController.isLoading.value) {
-                  return Center(child: CircularProgressIndicator());
+                  return const Center(child: CircularProgressIndicator());
                 } else {
                   return TabBarView(
                     children: [

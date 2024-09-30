@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
 import 'package:hck_app/widgets/button_style.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
@@ -9,8 +9,8 @@ import '../widgets/widgets.dart';
 
 class RequestLostItem extends StatelessWidget {
   const RequestLostItem({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   static final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -20,7 +20,7 @@ class RequestLostItem extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: TextHeading(text: 'Request a Lost Item'),
+        title: const TextHeading(text: 'Request a Lost Item'),
       ),
       body: SingleChildScrollView(
         child: Column(

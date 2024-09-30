@@ -7,7 +7,7 @@ import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_normal.dart';
 
 class EventPage extends StatelessWidget {
-  const EventPage({Key? key}) : super(key: key);
+  const EventPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class EventPage extends StatelessWidget {
         appBar: AppBar(
           centerTitle: false,
           automaticallyImplyLeading: false,
-          title: TextNormal(
+          title: const TextNormal(
             text: "Notice Board",
             fontWeight: FontWeight.w700,
             size: fontSize18,
@@ -37,7 +37,7 @@ class EventPage extends StatelessWidget {
                 children: [
                   CustomTabBar(tabString: tabStrings),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.015),
-                  Expanded(
+                  const Expanded(
                       child: TabBarView(
                     children: [EventBody(), InternshipBody()],
                   )),

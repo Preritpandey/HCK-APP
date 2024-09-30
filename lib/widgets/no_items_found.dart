@@ -5,8 +5,7 @@ import 'package:hck_app/resources/text_subheading.dart';
 class NoItemsFound extends StatelessWidget {
   final String title;
   final String subtitle;
-  const NoItemsFound({Key? key, required this.title, required this.subtitle})
-      : super(key: key);
+  const NoItemsFound({super.key, required this.title, required this.subtitle});
 
   @override
   Widget build(BuildContext context) {

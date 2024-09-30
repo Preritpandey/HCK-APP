@@ -9,14 +9,13 @@ class TextBody extends StatelessWidget {
   final TextAlign textAlign;
   final TextOverflow? overflow;
   const TextBody(
-      {Key? key,
+      {super.key,
       this.size = 13,
       required this.text,
       this.color,
       this.fontWeight = FontWeight.w600,
       this.overflow,
-      this.textAlign = TextAlign.left})
-      : super(key: key);
+      this.textAlign = TextAlign.left});
 
   @override
   Widget build(BuildContext context) {

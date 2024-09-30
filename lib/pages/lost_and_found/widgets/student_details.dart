@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/lost_and_found_controller.dart';
+import 'package:hck_app/services/lost_and_found_service.dart';
 import 'package:hck_app/widgets/text_box.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 
 class StudentDetails extends StatelessWidget {
-  const StudentDetails({Key? key}) : super(key: key);
+  const StudentDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class StudentDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TextHeading(text: "Student Details", size: fontSize20),
+        const TextHeading(text: "Student Details", size: fontSize20),
         SizedBox(height: MediaQuery.of(context).size.height * 0.01),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,11 +5,10 @@ import 'package:iconsax/iconsax.dart';
 
 class TodayEvents extends StatelessWidget {
   const TodayEvents(
-      {Key? key,
+      {super.key,
       required this.eventTitle,
       required this.location,
-      required this.imageUrl})
-      : super(key: key);
+      required this.imageUrl});
   final String eventTitle;
   final String location;
   final String imageUrl;
@@ -63,7 +62,7 @@ class TodayEvents extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Icon(
+                          const Icon(
                             Iconsax.location5,
                             size: fontSize20,
                           ),
@@ -83,14 +82,14 @@ class TodayEvents extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.access_time_filled_sharp,
                             size: fontSize20,
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.height * 0.005,
                           ),
-                          TextNormal(
+                          const TextNormal(
                             text: "Started",
                             fontWeight: FontWeight.w500,
                             size: fontSize10,

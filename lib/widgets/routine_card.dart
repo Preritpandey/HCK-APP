@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/controller/class_controller.dart';
+import 'package:hck_app/services/schedule_service.dart';
 import 'package:hck_app/models/schedule_model.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_normal.dart';
+import 'package:hck_app/widgets/weekend.dart';
 
 class EventCard extends StatelessWidget {
   final String day;
-  EventCard({required this.day});
+  EventCard({super.key, required this.day});
 
   final ClassController classController = Get.find();
 
@@ -17,7 +18,10 @@ class EventCard extends StatelessWidget {
     List<ClassModel> classes = classController.getClassesForDay(day);
 
     return classes.isEmpty
-        ? Center(child: Text('No classes for $day'))
+        ? Center(
+            child: day == 'Saturday'
+                ? const WeekendContainer()
+                : Text('No classes for $day'))
         : Padding(
             padding: EdgeInsets.symmetric(
               horizontal: MediaQuery.of(context).size.width * 0.01,
@@ -76,13 +80,11 @@ class EventCard extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               TextNormal(
-                                  text: classItem.startTime.split(":")[0] +
-                                      ":" +
-                                      classItem.startTime.split(":")[1]),
+                                  text: "${classItem.startTime.split(":")[0]}:${classItem.startTime.split(":")[1]}"),
                               // SizedBox(width: 3),
                               SizedBox(
                                   width: MediaQuery.of(context).size.width / 8),
-                              Icon(Icons.location_on,
+                              const Icon(Icons.location_on,
                                   color: Colors.green, size: 15),
                               TextNormal(
                                 text: classItem.roomName,
@@ -91,7 +93,7 @@ class EventCard extends StatelessWidget {
                               SizedBox(
                                   width:
                                       MediaQuery.of(context).size.width / 20),
-                              Icon(Icons.access_time_filled_sharp,
+                              const Icon(Icons.access_time_filled_sharp,
                                   color: Colors.green, size: 15),
                               TextNormal(
                                   text: classItem.getFormattedDuration()),

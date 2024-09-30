@@ -46,13 +46,13 @@ const MaterialColor materialHeraldGreen = MaterialColor(
 );
 const int _heraldGreenPrimary = 0xFF74C043;
 
-final double fontSize10 = 7.5;
-final double fontSize12 = 9.3;
-final double fontSize13 = 9.8;
-final double fontSize14 = 10.5;
-final double fontSize16 = 12.0;
-final double fontSize18 = 15.0;
-final double fontSize20 = 15.7;
-final double fontSize24 = 18.0;
-final double fontSize30 = 22.0;
-final double fontSize36 = 27.0;
+const double fontSize10 = 7.5;
+const double fontSize12 = 9.3;
+const double fontSize13 = 9.8;
+const double fontSize14 = 10.5;
+const double fontSize16 = 12.0;
+const double fontSize18 = 15.0;
+const double fontSize20 = 15.7;
+const double fontSize24 = 18.0;
+const double fontSize30 = 22.0;
+const double fontSize36 = 27.0;

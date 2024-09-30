@@ -10,15 +10,14 @@ class TextNormal extends StatelessWidget {
   final TextOverflow? overflow;
   final int? maxLines;
   const TextNormal(
-      {Key? key,
+      {super.key,
       this.size = 16,
       required this.text,
       this.color,
       this.fontWeight = FontWeight.normal,
       this.maxLines,
       this.overflow,
-      this.textAlign = TextAlign.left})
-      : super(key: key);
+      this.textAlign = TextAlign.left});
 
   @override
   Widget build(BuildContext context) {

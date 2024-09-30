@@ -5,7 +5,7 @@ class CourseInfo extends StatelessWidget {
   final String title;
   final String subTitle;
 
-  CourseInfo(
+  const CourseInfo(
       {super.key,
       this.backgroundColor = Colors.transparent,
       required this.title,

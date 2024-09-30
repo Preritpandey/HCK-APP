@@ -10,7 +10,7 @@ import 'package:hck_app/resources/text_normal.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class EventBody extends StatelessWidget {
-  const EventBody({Key? key}) : super(key: key);
+  const EventBody({super.key});
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(EventDataController());
@@ -26,7 +26,7 @@ class EventBody extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.06,
               ),
-              TextNormal(
+              const TextNormal(
                   text: "Events Now",
                   size: fontSize16,
                   fontWeight: FontWeight.w600),
@@ -45,7 +45,7 @@ class EventBody extends StatelessWidget {
                                 itemCount: controller.todayEvents.length,
                                 itemBuilder: (context, index) {
                                   return InkWell(
-                                    onTap: () => Get.to(EventsDetails(),
+                                    onTap: () => Get.to(const EventsDetails(),
                                         arguments:
                                             controller.todayEvents[index]),
                                     // Navigator.push(context,
@@ -101,7 +101,7 @@ class EventBody extends StatelessWidget {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.08,
               ),
-              TextNormal(
+              const TextNormal(
                   text: "Upcomming Events",
                   size: fontSize16,
                   fontWeight: FontWeight.w600),

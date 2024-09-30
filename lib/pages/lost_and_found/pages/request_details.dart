@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:hck_app/controller/lost_and_found_model.dart';
+import 'package:hck_app/models/lost_and_found_model.dart';
 import 'package:hck_app/widgets/footer.dart';
 import 'package:hck_app/resources/constant.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/resources/text_normal.dart';
 
 class RequestDetails extends StatelessWidget {
-  const RequestDetails({Key? key}) : super(key: key);
+  const RequestDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class RequestDetails extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as LostAndFoundDetails;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Request Details'),
+        title: const Text('Request Details'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -74,11 +74,11 @@ class DetailsRow extends StatelessWidget {
   final bool isNewLine;
 
   const DetailsRow({
-    Key? key,
+    super.key,
     required this.title,
     required this.text,
     this.isNewLine = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -115,9 +115,8 @@ class DetailsRow extends StatelessWidget {
 
 class _ItemTitle extends StatelessWidget {
   const _ItemTitle({
-    Key? key,
     required this.data,
-  }) : super(key: key);
+  });
 
   final LostAndFoundDetails data;
 
@@ -136,7 +135,7 @@ class _ItemTitle extends StatelessWidget {
                     maxLines: 3,
                   )),
               Row(children: [
-                TextHeading(text: 'Status: ', size: fontSize16),
+                const TextHeading(text: 'Status: ', size: fontSize16),
                 TextHeading(
                     text: data.status,
                     size: fontSize16,

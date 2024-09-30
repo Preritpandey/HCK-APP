@@ -5,12 +5,11 @@ import 'package:url_launcher/url_launcher.dart';
 
 class EventsInfo extends StatelessWidget {
   const EventsInfo(
-      {Key? key,
+      {super.key,
       required this.icon,
       required this.title,
       required this.description,
-      this.isLink = false})
-      : super(key: key);
+      this.isLink = false});
   final IconData icon;
   final String title;
   final String description;

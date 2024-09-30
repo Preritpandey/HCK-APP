@@ -6,7 +6,7 @@ import 'package:hck_app/resources/text_normal.dart';
 import 'package:hck_app/models/internship_model.dart';
 
 class InternshipBody extends StatefulWidget {
-  const InternshipBody({Key? key}) : super(key: key);
+  const InternshipBody({super.key});
 
   @override
   State<InternshipBody> createState() => _InternshipBodyState();
@@ -31,7 +31,7 @@ class _InternshipBodyState extends State<InternshipBody> {
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.03,
           ),
-          TextNormal(
+          const TextNormal(
               text: "Available Now",
               fontWeight: FontWeight.w600,
               size: fontSize16),

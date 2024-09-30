@@ -8,12 +8,11 @@ class AdditionalDetails extends StatelessWidget {
   final bool isRequired;
   final TextEditingController textController;
   const AdditionalDetails(
-      {Key? key,
+      {super.key,
       required this.title,
       required this.hintText,
       required this.textController,
-      this.isRequired = true})
-      : super(key: key);
+      this.isRequired = true});
 
   @override
   Widget build(BuildContext context) {

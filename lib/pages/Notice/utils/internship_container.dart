@@ -6,7 +6,7 @@ import 'package:hck_app/models/internship_model.dart';
 class InternShipContainer extends StatelessWidget {
   final Job job;
 
-  const InternShipContainer({Key? key, required this.job}) : super(key: key);
+  const InternShipContainer({super.key, required this.job});
 
   @override
   Widget build(BuildContext context) {
