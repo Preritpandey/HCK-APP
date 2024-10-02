@@ -246,22 +246,12 @@ class ProfilePage extends StatelessWidget {
                         //       style: heraldButtonStyle(),
                         //       child: const Text('Set Reminder'),
                         //     ),
-                        Obx(() {
-                          return ElevatedButton(
-                            onPressed: () {
-                              reminderController.pickDateTime(context, '');
-                            },
-                            style: heraldButtonStyle(),
-                            child: Text(reminderController.isReminderSet.value
-                                ? 'Reminder Set${reminderController.getReminderTime()}'
-                                : 'Set Reminder'),
-                          );
-                        }),
                       ],
                     ),
                   ))
             ],
           ),
+          
         ),
       ),
     );

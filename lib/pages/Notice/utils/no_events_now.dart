@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hck_app/pages/Routine/calander_page.dart';
+import 'package:hck_app/pages/Routine/calendar_page.dart';
 import 'package:hck_app/resources/constant.dart';
 
 import '../../../../resources/text_normal.dart';
@@ -36,7 +36,7 @@ class NoEvents extends StatelessWidget {
                 fontWeight: FontWeight.w500,
                 color: Colors.grey[400]),
             InkWell(
-              onTap: () => Get.to(const CalanderPage()),
+              onTap: () => Get.to( CalendarPage()),
               child: const TextNormal(
                   text: "view calender",
                   size: fontSize12,

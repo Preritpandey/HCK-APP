@@ -17,12 +17,13 @@ class LoginController extends GetxController {
   var email = ''.obs;
   var name = ''.obs;
   var isUserLoggedIn = false.obs;
-  RxBool  activeConnectiom = false.obs; 
+  RxBool isConnectionActive = false.obs;
 
   @override
   void onInit() {
     super.onInit();
     checkLoginStatus();
+    checkUserConnection();
   }
 
   Future<void> checkLoginStatus() async {
@@ -57,47 +58,52 @@ class LoginController extends GetxController {
   }
 
   Future<void> refreshAuthToken(String refreshToken) async {
-    isLoading.value = true;
-    final url = Uri.parse(
-        refreshTokenUrl); // Use your actual refresh token API endpoint
+    if (isConnectionActive.value == true) {
+      isLoading.value = true;
+      final url = Uri.parse(
+          refreshTokenUrl); // Use your actual refresh token API endpoint
 
-    final headers = {
-      'accept': 'application/json',
-      'Content-Type': 'application/json',
-    };
-    final body = jsonEncode({
-      'refreshToken': refreshToken
-    }); // Send the refresh token to refresh the access token
+      final headers = {
+        'accept': 'application/json',
+        'Content-Type': 'application/json',
+      };
+      final body = jsonEncode({
+        'refreshToken': refreshToken
+      }); // Send the refresh token to refresh the access token
 
-    try {
-      final response = await http.post(url, headers: headers, body: body);
-      if (response.statusCode == 200) {
-        final responseBody = jsonDecode(response.body);
+      try {
+        final response = await http.post(url, headers: headers, body: body);
+        if (response.statusCode == 200) {
+          final responseBody = jsonDecode(response.body);
 
-        final newAccessToken = responseBody['accessToken'];
-        final newRefreshToken = responseBody[
-            'refreshToken']; // Update with new refresh token if provided
-        final newGroup = responseBody['group'];
-        final newEmail = responseBody['email'];
-        final newName = responseBody['name'];
-        final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('accessToken', newAccessToken);
-        await prefs.setString(
-            'refreshToken', newRefreshToken); // Store the updated refresh token
-        await prefs.setString('group', newGroup);
-        await prefs.setString('email', newEmail);
-        await prefs.setString('name', newName);
-        updateTokens(
-            newAccessToken, newRefreshToken, newGroup, newEmail, newName);
+          final newAccessToken = responseBody['accessToken'];
+          final newRefreshToken = responseBody[
+              'refreshToken']; // Update with new refresh token if provided
+          final newGroup = responseBody['group'];
+          final newEmail = responseBody['email'];
+          final newName = responseBody['name'];
+          final prefs = await SharedPreferences.getInstance();
+          await prefs.setString('accessToken', newAccessToken);
+          await prefs.setString('refreshToken',
+              newRefreshToken); // Store the updated refresh token
+          await prefs.setString('group', newGroup);
+          await prefs.setString('email', newEmail);
+          await prefs.setString('name', newName);
+          updateTokens(
+              newAccessToken, newRefreshToken, newGroup, newEmail, newName);
 
-        navigateToNextPage(newGroup, newEmail);
-        isUserLoggedIn.value = true;
-      } else {
-        Get.snackbar('Error', 'Failed to refresh token');
+          navigateToNextPage(newGroup, newEmail);
+          isUserLoggedIn.value = true;
+        } else {
+          Get.snackbar('Error', 'Failed to refresh token');
+        }
+      } catch (e) {
+        Get.snackbar('Error', 'An error occurred while refreshing token');
       }
-    } catch (e) {
-      Get.snackbar('Error', 'An error occurred while refreshing token');
+    } else {
+      Get.snackbar('Error', 'Check Your connection and login again');
     }
+
     isLoading.value = false;
   }
 
@@ -168,5 +174,14 @@ class LoginController extends GetxController {
     }
   }
 
-  
+  Future checkUserConnection() async {
+    try {
+      final result = await InternetAddress.lookup('google.com');
+      if (result.isNotEmpty && result[0].rawAddress.isNotEmpty) {
+        isConnectionActive.value = true;
+      }
+    } on SocketException catch (_) {
+      isConnectionActive.value = false;
+    }
+  }
 }

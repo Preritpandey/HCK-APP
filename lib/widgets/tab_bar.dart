@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hck_app/pages/Routine/calendar_page.dart';
 import 'package:hck_app/services/schedule_service.dart';
-import 'package:hck_app/pages/Routine/calander_page.dart';
 import 'package:hck_app/resources/text_heading.dart';
 import 'package:hck_app/widgets/custom_tabBar.dart';
 import 'package:hck_app/widgets/routine_card.dart';
@@ -17,7 +17,7 @@ class NavTabBar extends StatelessWidget {
       "Yesterday",
       "Today",
       "Tomorrow",
-      ...classController.getDaysAfterTomorrow()
+      ...classController.getDatesAfterTomorrow() // For upcoming days
     ];
 
     return DefaultTabController(
@@ -30,7 +30,9 @@ class NavTabBar extends StatelessWidget {
           title: const TextHeading(text: 'Routine'),
           actions: [
             IconButton(
-              onPressed: () => Get.to(() => const CalanderPage()),
+              onPressed: () async {
+                Get.to(() => CalendarPage());
+              },
               icon: const ImageIcon(AssetImage('assets/icons/calendar.png')),
             )
           ],
@@ -49,9 +51,8 @@ class NavTabBar extends StatelessWidget {
                       EventCard(day: classController.getToday()),
                       EventCard(day: classController.getTomorrow()),
                       ...classController
-                          .getDaysAfterTomorrow()
-                          .map((day) => EventCard(day: day))
-                          .toList(),
+                          .getDatesAfterTomorrow()
+                          .map((date) => EventCard(day: date)),
                     ],
                   );
                 }

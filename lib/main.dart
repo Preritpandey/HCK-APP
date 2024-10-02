@@ -5,7 +5,7 @@ import 'package:hck_app/models/routine_model.dart';
 import 'package:hck_app/pages/Home/home.dart';
 import 'package:hck_app/pages/Home/home_screen.dart';
 import 'package:hck_app/pages/Auth/login_page.dart';
-import 'package:hck_app/pages/Notification/notification.dart';
+import 'package:hck_app/services/notification_service.dart';
 import 'package:hck_app/pages/Splash/splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
