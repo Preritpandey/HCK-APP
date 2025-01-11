@@ -1,5 +1,7 @@
 // static const _baseUrl = "http://192.168.1.95:8000/api/v4"; //hostel
-const _baseUrl = "http://192.168.1.78:8899/api/v4"; //college
+// const _baseUrl = "http://192.168.1.78:8899/api/v4"; //college
+
+ const _baseUrl = "http://192.168.1.75:8899/api/v4"; //hostel
 
 // const _baseUrl = "http://localhost:8899/api/v4";
 

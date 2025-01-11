@@ -24,7 +24,7 @@ class ClassController extends GetxController {
 
       // Directly map Hive-stored objects to ClassModel using fromHive factory method
       classes.value = storedClasses.map((e) => ClassModel.fromHive(e)).toList();
-    } catch (e) {
+    } catch (e)  {
     } finally {
       isLoading(false); // Stop loading after data is fetched
     }
